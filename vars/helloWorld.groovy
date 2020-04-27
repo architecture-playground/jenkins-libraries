@@ -2,5 +2,5 @@
 
 def call(String textMessage) {
     print textMessage
-    println("Hello world")
+    sh('printenv')
 }
