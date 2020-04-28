@@ -21,11 +21,11 @@ def call(body) {
 
         sh '''#!/bin/bash -ex
 echo "** Building application docker image started" && \\
-docker build --target app -t architectureplayground/featuretoggle:latest . && \\
+docker build --target app -t architectureplayground/feature-toggle:latest . && \\
 echo "** Building application docker image finished" && \\
 
 echo "** Start pushing docker image in docker hub repository" && \\
-docker push architectureplayground/featuretoggle:latest && \\
+docker push architectureplayground/feature-toggle:latest && \\
 echo "** Docker image pushed to docker hub repository"
                     '''
     }
