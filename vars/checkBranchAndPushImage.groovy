@@ -6,13 +6,7 @@ def call(body) {
             return env.BRANCH_NAME == 'master';
         }
     }
-    when {
-        expression {
-            print(env.BRANCH_NAME)
-            return env.BRANCH_NAME == 'master';
-        }
-    }
-    steps {
+    {
         echo "** Docker login started"
         withCredentials([usernamePassword(credentialsId: 'dockerhub_architectureplayground', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
             sh '''docker login -u $USERNAME -p $PASSWORD'''
