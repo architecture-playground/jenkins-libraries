@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def call(body) {
+def call(repositoryName) {
 
     echo("** Docker login started")
     withCredentials([usernamePassword(credentialsId: 'dockerhub_architectureplayground', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
@@ -8,8 +8,6 @@ def call(body) {
     }
 
     echo "** Docker login finished"
-
-    repositoryName = env.JOB_NAME.split("/")[0]
 
     sh """#!/bin/bash -ex
 echo "** Building application docker image started" && \\
