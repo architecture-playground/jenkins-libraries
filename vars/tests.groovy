@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def call(String repositoryName) {
+def call(repositoryName) {
 
     sh("""#!/bin/bash -ex
 echo "** Building tests docker image started" && \\
