@@ -2,7 +2,7 @@
 
 def call(repositoryName) {
 
-    echo("** Docker login started")
+    echo ("** Docker login started")
     withCredentials([usernamePassword(credentialsId: 'dockerhub_architectureplayground', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
         sh '''docker login -u $USERNAME -p $PASSWORD'''
     }
@@ -19,4 +19,3 @@ docker push architectureplayground/${repositoryName}:latest && \\
 echo "** Docker image pushed to docker hub repository"
                     """
 }
-
